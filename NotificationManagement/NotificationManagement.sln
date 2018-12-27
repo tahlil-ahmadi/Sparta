@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{726D94FF-6BD8-4735-BC18-E6B769B82F6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{98D5C271-433A-48DB-8CF1-F146FFEE87B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationManagement.Domain", "src\NotificationManagement.Domain\NotificationManagement.Domain.csproj", "{64158C88-AA39-4CDE-8616-5DE35AAB99B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64158C88-AA39-4CDE-8616-5DE35AAB99B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64158C88-AA39-4CDE-8616-5DE35AAB99B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64158C88-AA39-4CDE-8616-5DE35AAB99B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64158C88-AA39-4CDE-8616-5DE35AAB99B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{64158C88-AA39-4CDE-8616-5DE35AAB99B6} = {726D94FF-6BD8-4735-BC18-E6B769B82F6A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {633B77EE-B942-4BEE-A385-ADE8BCF5648D}
+	EndGlobalSection
+EndGlobal

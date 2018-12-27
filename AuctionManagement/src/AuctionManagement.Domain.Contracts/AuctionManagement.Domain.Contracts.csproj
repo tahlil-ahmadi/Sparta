@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Sparta.Core" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Sparta.Domain">
+      <HintPath>..\..\..\..\..\..\Users\Teacher1\.nuget\packages\sparta.domain\1.0.0\lib\netstandard2.0\Sparta.Domain.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
