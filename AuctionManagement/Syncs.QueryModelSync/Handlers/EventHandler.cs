@@ -4,8 +4,7 @@ using Sparta.Domain;
 
 namespace Syncs.QueryModelSync.Handlers
 {
-    public class AuctionEventHandler : IEventHandler<AuctionOpened>,
-                                             IEventHandler<BidPlaced>
+    public class AuctionEventHandler
     {
         public void Handle(AuctionOpened @event)
         {

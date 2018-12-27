@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syncs.QueryModelSync", "Syn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionManagement.Domain.Contracts", "src\AuctionManagement.Domain.Contracts\AuctionManagement.Domain.Contracts.csproj", "{917CAEC6-4A42-43D2-BC85-41EBA0B88E70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syncs.MessageDispatcher", "src\Syncs.MessageDispatcher\Syncs.MessageDispatcher.csproj", "{4C52FF9F-F7FD-45BA-BE5E-669161FCD4CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{917CAEC6-4A42-43D2-BC85-41EBA0B88E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{917CAEC6-4A42-43D2-BC85-41EBA0B88E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{917CAEC6-4A42-43D2-BC85-41EBA0B88E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C52FF9F-F7FD-45BA-BE5E-669161FCD4CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C52FF9F-F7FD-45BA-BE5E-669161FCD4CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C52FF9F-F7FD-45BA-BE5E-669161FCD4CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C52FF9F-F7FD-45BA-BE5E-669161FCD4CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +107,7 @@ Global
 		{FC7DF73D-6F94-4F46-A0BB-9F25FF1556BB} = {EFCD16EA-78E5-46D2-B091-F3F94E40C610}
 		{4B7FF219-71C5-4C06-BAFD-2F99A98FB665} = {FC7DF73D-6F94-4F46-A0BB-9F25FF1556BB}
 		{917CAEC6-4A42-43D2-BC85-41EBA0B88E70} = {DA343965-CB3A-42C5-A6B8-E76DAED352AC}
+		{4C52FF9F-F7FD-45BA-BE5E-669161FCD4CA} = {FC7DF73D-6F94-4F46-A0BB-9F25FF1556BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {70F25CD6-CD7C-4EBE-BBB0-7CBFD7518646}

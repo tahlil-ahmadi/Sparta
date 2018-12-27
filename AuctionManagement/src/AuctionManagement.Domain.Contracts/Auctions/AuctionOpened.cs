@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Sparta.Domain;
+using Sparta.Core.EventHandling;
 
 namespace AuctionManagement.Domain.Contracts.Auctions
 {

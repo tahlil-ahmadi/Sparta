@@ -5,7 +5,7 @@ using Sparta.Domain;
 
 namespace AuctionManagement.Domain.Model.Auctions
 {
-    public partial class Auction : AggregateRoot<Guid>
+    public partial class Auction : EventSourcedAggregateRoot<Guid>
     {
         public int SellerId { get; private set; }
         public SellingProduct Product { get; private set; }

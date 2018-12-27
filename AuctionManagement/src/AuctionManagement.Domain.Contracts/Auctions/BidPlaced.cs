@@ -1,5 +1,5 @@
 ﻿using System;
-using Sparta.Domain;
+using Sparta.Core.EventHandling;
 
 namespace AuctionManagement.Domain.Contracts.Auctions
 {
