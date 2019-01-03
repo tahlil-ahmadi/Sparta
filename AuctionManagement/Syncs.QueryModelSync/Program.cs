@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using EventStore.ClientAPI;
 using EventStore.ClientAPI.SystemData;
 using Newtonsoft.Json;
-using Sparta.Domain;
+using Sparta.Core.EventHandling;
 using Syncs.QueryModelSync.Handlers;
 
 namespace Syncs.QueryModelSync

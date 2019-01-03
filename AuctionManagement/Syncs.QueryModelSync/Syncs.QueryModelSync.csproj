@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -7,16 +7,12 @@
 
   <ItemGroup>
     <PackageReference Include="EventStore.ClientAPI.NetCore" Version="4.1.0.23" />
+    <PackageReference Include="sparta.core" Version="1.0.1" />
+    <PackageReference Include="Sparta.Domain" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\src\AuctionManagement.Domain.Contracts\AuctionManagement.Domain.Contracts.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Sparta.Domain">
-      <HintPath>..\..\..\..\..\Users\Teacher1\.nuget\packages\sparta.domain\1.0.0\lib\netstandard2.0\Sparta.Domain.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>
