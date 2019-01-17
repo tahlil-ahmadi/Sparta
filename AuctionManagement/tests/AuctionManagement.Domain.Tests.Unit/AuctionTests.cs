@@ -16,7 +16,7 @@ namespace AuctionManagement.Domain.Tests.Unit
             var auction = builder.Build();
 
             auction.Id.Should().NotBeEmpty();
-            auction.SellerId.Should().Be(builder.SellerId);
+            auction.SellerId.Should().Be(builder.Seller.Id);
             auction.Product.Should().BeEquivalentTo(builder.Product);
             auction.StartingPrice.Should().Be(builder.StartingPrice);
             auction.EndDateTime.Should().Be(builder.EndDateTime);

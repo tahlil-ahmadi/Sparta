@@ -9,7 +9,7 @@ namespace AuctionManagement.Domain.Model.Participants
     public class Participant: EventSourcedAggregateRoot<int>
     {
         public string Name { get; private set; }
-        public Participant(long id, string name)
+        public Participant(int id, string name)
         {
             this.Id = id;
             this.Name = name;

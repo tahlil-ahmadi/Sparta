@@ -12,7 +12,6 @@ namespace AuctionManagement.Persistence.ES
 {
     public class AuctionRepository : EventSourcedRepository<Guid, Auction>, IAuctionRepository
     {
-       
-
+      
     }
 }

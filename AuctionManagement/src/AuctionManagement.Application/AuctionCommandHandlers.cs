@@ -26,7 +26,7 @@ namespace AuctionManagement.Application
 
         public void Handle(PlaceBidCommand command)
         {
-            var auction = _auctionRepository.Get(command.AuctionId);
+            var auction = _auctionRepository.GetById(command.AuctionId);
             var bid = new Bid(command.BidderId, command.BidAmount, DateTime.Now);
             auction.PlaceBid(bid);
             //update auction
