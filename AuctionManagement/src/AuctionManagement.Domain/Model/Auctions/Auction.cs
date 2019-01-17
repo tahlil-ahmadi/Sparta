@@ -1,6 +1,7 @@
 using System;
 using AuctionManagement.Domain.Contracts.Auctions;
 using AuctionManagement.Domain.Model.Auctions.Exceptions;
+using AuctionManagement.Domain.Model.Participants;
 using Sparta.Domain;
 
 namespace AuctionManagement.Domain.Model.Auctions
@@ -13,12 +14,12 @@ namespace AuctionManagement.Domain.Model.Auctions
         public DateTime EndDateTime { get; private set; }
         public Bid WinningBid { get; private set; }
         protected Auction(){}
-        public Auction(int sellerId, SellingProduct product, int startingPrice, DateTime endDateTime)
+        public Auction(Participant seller, SellingProduct product, int startingPrice, DateTime endDateTime)
         {
             if (startingPrice <= 0) throw new InvalidStartingPriceException();
             if (endDateTime <= DateTime.Now) throw new PastEndDateException();
 
-            Causes(new AuctionOpened(Guid.NewGuid(), sellerId, product.CategoryId, product.Name, startingPrice, endDateTime));
+            Causes(new AuctionOpened(Guid.NewGuid(), seller.Id, product.CategoryId, product.Name, startingPrice, endDateTime));
         }
         public void PlaceBid(Bid bid)
         {

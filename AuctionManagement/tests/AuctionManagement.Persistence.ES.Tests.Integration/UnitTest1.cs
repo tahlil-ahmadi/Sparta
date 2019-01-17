@@ -19,7 +19,7 @@ namespace AuctionManagement.Persistence.ES.Tests.Integration
 
             //var rep = new AuctionRepository();
             //var id = Guid.Parse("7ca38e9b-c5aa-4171-8378-99c5fb87b47e");
-            //var auction = rep.GetById(id);
+            //var auction = rep.Get(id);
         }
     }
 }

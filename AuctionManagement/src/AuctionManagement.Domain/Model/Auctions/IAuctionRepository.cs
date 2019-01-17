@@ -6,7 +6,7 @@ namespace AuctionManagement.Domain.Model.Auctions
 {
     public interface IAuctionRepository
     {
-        Auction GetById(Guid id);
+        Auction Get(Guid id);
         void Add(Auction auction);
     }
 }
