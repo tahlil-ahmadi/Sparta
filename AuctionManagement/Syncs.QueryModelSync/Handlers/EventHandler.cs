@@ -1,6 +1,8 @@
 ﻿using System;
 using AuctionManagement.Domain.Contracts.Auctions;
+using MongoDB.Driver;
 using Sparta.Domain;
+using Syncs.QueryModelSync.QueryModel;
 
 namespace Syncs.QueryModelSync.Handlers
 {
@@ -8,14 +10,33 @@ namespace Syncs.QueryModelSync.Handlers
     {
         public void Handle(AuctionOpened @event)
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("AuctionOpened Handled !");
+            var collection = GetCollection();
+            var auction = new Auction()
+            {
+                Id = @event.Id,
+                Product = new SellingProduct()
+                {
+                    CategoryId = @event.ProductCategoryId,
+                    CategoryName = "Something !",    //should be loaded,
+                    Name = @event.ProductName
+                },
+                EndDateTime = @event.EndDateTime
+            };
+            collection.InsertOne(auction);
         }
 
         public void Handle(BidPlaced @event)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("BidPlace Handled !");
+        }
+
+        private static IMongoCollection<Auction> GetCollection()
+        {
+            //TODO: refactor this codes
+            var connectionString = "mongodb://localhost:27017";
+            var client = new MongoClient(connectionString);
+            var db = client.GetDatabase("AuctionManagementQuery");
+            var collection = db.GetCollection<Auction>("Auctions");
+            return collection;
         }
     }
 }
