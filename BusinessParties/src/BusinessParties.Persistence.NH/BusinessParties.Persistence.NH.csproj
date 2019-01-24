@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nhibernate" Version="5.2.3" />
+    <PackageReference Include="system.data.sqlclient" Version="4.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessParties.Domain\BusinessParties.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
