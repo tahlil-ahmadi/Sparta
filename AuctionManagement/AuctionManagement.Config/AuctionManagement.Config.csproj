@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="autofac" Version="4.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AuctionManagement.Application.Contracts\AuctionManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\src\AuctionManagement.Application\AuctionManagement.Application.csproj" />
+    <ProjectReference Include="..\src\AuctionManagement.Domain.Contracts\AuctionManagement.Domain.Contracts.csproj" />
+    <ProjectReference Include="..\src\AuctionManagement.Domain\AuctionManagement.Domain.csproj" />
+    <ProjectReference Include="..\src\AuctionManagement.Gateways.RestApi\AuctionManagement.Gateways.RestApi.csproj" />
+    <ProjectReference Include="..\src\AuctionManagement.Persistence.ES\AuctionManagement.Persistence.ES.csproj" />
+  </ItemGroup>
+
+</Project>

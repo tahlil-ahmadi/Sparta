@@ -2,26 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AuctionManagement.Config;
-using AuctionManagement.Gateways.RestApi;
-using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
 
-namespace ServiceHost
+namespace ApiGateway
 {
     public class Startup
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().AddAuction();
-        }
-
-        public void ConfigureContainer(ContainerBuilder builder)
-        {
-            builder.RegisterModule(new AuctionModule());
+            services.AddOcelot();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -31,12 +25,7 @@ namespace ServiceHost
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvcWithDefaultRoute();
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseOcelot().Wait();
         }
     }
 }

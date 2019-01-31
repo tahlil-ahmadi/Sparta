@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{737680BF-94CF-4AF0-9E5A-F0CFAE944D2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{737680BF-94CF-4AF0-9E5A-F0CFAE944D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{737680BF-94CF-4AF0-9E5A-F0CFAE944D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{737680BF-94CF-4AF0-9E5A-F0CFAE944D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{737680BF-94CF-4AF0-9E5A-F0CFAE944D2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E1145F3-9C0A-44C1-B88A-58F8E76EFD3A}
+	EndGlobalSection
+EndGlobal
