@@ -10,7 +10,6 @@ namespace AuctionManagement.Config
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<AuctionRepository>().As<IAuctionRepository>().InstancePerLifetimeScope();
-            //... other dependencies
         }
     }
 }

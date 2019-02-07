@@ -14,28 +14,28 @@ namespace AuctionManagement.Domain.Model.Auctions
         public DateTime EndDateTime { get; private set; }
         public Bid WinningBid { get; private set; }
         protected Auction(){}
-        public Auction(Participant seller, SellingProduct product, int startingPrice, DateTime endDateTime)
+        public Auction(Participant seller, SellingProduct product, int startingPrice, DateTime endDateTime, IClock clock)
         {
             if (startingPrice <= 0) throw new InvalidStartingPriceException();
-            if (endDateTime <= DateTime.Now) throw new PastEndDateException();
+            if (endDateTime <= clock.Now()) throw new PastEndDateException();
 
             Causes(new AuctionOpened(Guid.NewGuid(), seller.Id, product.CategoryId, product.Name, startingPrice, endDateTime));
         }
-        public void PlaceBid(Bid bid)
+        public void PlaceBid(Bid bid, IClock clock)
         {
-            GuardAgainstClosedAuction();
+            GuardAgainstClosedAuction(clock);
             GuardAgainstInvalidBidAmount(bid.Amount);
             GuardAgainstInvalidBidder(bid.BidderId);
 
             Causes(new BidPlaced(this.Id, bid.Amount, bid.OfferDateTime, bid.BidderId));
         }
-        private void GuardAgainstClosedAuction()
+        private void GuardAgainstClosedAuction(IClock clock)
         {
-            if (this.IsClosed()) throw new InvalidAuctionStateException();
+            if (this.IsClosed(clock)) throw new InvalidAuctionStateException();
         }
-        private bool IsClosed()
+        private bool IsClosed(IClock clock)
         {
-            return this.EndDateTime < DateTime.Now;
+            return this.EndDateTime < clock.Now();
         }
         private void GuardAgainstInvalidBidAmount(int bidAmount)
         {

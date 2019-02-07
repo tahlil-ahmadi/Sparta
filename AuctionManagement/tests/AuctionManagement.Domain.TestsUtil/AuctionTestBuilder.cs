@@ -10,12 +10,14 @@ namespace AuctionManagement.Domain.TestsUtil
         public SellingProduct Product { get; private set; }
         public int StartingPrice { get; private set; }
         public DateTime EndDateTime { get; private set; }
+        public IClock Clock { get;private set; }
         public AuctionTestBuilder()
         {
             this.Product = new SellingProduct(2,"X");
             this.Seller = new Participant(3, "Jack");
             this.EndDateTime = DateTime.Now.AddDays(7);
             this.StartingPrice = 1000;
+            this.Clock = new StubClock();
         }
 
         public AuctionTestBuilder WithStartingPrice(int startingPrice)
@@ -28,9 +30,20 @@ namespace AuctionManagement.Domain.TestsUtil
             this.EndDateTime = DateTime.Now.AddDays(-1);
             return this;
         }
+
+        public AuctionTestBuilder WithEndDateTime(DateTime date)
+        {
+            this.EndDateTime = date;
+            return this;
+        }
+        public AuctionTestBuilder WithClock(IClock clock)
+        {
+            this.Clock = clock;
+            return this;
+        }
         public Auction Build()
         {
-            return new Auction(Seller, Product, StartingPrice, EndDateTime);
+            return new Auction(Seller, Product, StartingPrice, EndDateTime, Clock);
         }
     }
 }

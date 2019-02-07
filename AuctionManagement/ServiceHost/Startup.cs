@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using AuctionManagement.Config;
 using AuctionManagement.Gateways.RestApi;
 using Autofac;
+using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ServiceHost
@@ -16,7 +18,15 @@ namespace ServiceHost
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().AddAuction();
+            services.AddMvc(options =>options.Filters.Add(new AuthorizeFilter()))
+                    .AddAuction();
+
+            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+                .AddIdentityServerAuthentication(options =>
+                {
+                    options.Authority = "http://localhost:5000";
+                    options.ApiName = "auction";
+                });
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
@@ -32,11 +42,6 @@ namespace ServiceHost
             }
 
             app.UseMvcWithDefaultRoute();
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
         }
     }
 }
