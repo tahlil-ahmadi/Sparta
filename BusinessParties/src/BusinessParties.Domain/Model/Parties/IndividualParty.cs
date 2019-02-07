@@ -1,4 +1,6 @@
-﻿namespace BusinessParties.Domain.Model.Parties
+﻿using BusinessParties.Domain.Model.Parties.States;
+
+namespace BusinessParties.Domain.Model.Parties
 {
     public class IndividualParty : Party
     {

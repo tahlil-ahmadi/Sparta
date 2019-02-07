@@ -11,5 +11,10 @@ namespace BusinessParties.Domain.Model.Parties.States
         {
             throw new Exception("Invalid State");
         }
+
+        public virtual PartyState GotoReject()
+        {
+            throw new Exception("Invalid State");
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace BusinessParties.Domain.Model.Parties
         private IList<Phone> _phones;
         public IReadOnlyCollection<Phone> Phones => new ReadOnlyCollection<Phone>(_phones);
         public PartyId Id { get; private set; }
-        public PartyState State { get; private set; }
+        public PartyState State { get; protected set; }
         protected Party() { }
         protected Party(PartyId id)
         {
@@ -22,6 +22,10 @@ namespace BusinessParties.Domain.Model.Parties
             this.State = this.State.GotoConfirm();
         }
 
+        public void Reject()
+        {
+            this.State = this.State.GotoReject();
+        }
         public void AssignPhones(List<Phone> phones)
         {
             if (State.CanModify())

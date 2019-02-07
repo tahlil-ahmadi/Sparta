@@ -7,5 +7,10 @@
         {
             return new ConfirmedState();
         }
+
+        public override PartyState GotoReject()
+        {
+            return new RejectedState();
+        }
     }
 }
