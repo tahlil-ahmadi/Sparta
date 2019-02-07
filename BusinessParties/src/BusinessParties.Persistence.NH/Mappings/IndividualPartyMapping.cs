@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using BusinessParties.Domain.Model;
+using BusinessParties.Domain.Model.Parties;
 using NHibernate.Mapping.ByCode.Conformist;
 
 namespace BusinessParties.Persistence.NH.Mappings

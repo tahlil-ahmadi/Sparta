@@ -1,4 +1,4 @@
-﻿namespace BusinessParties.Domain.Model
+﻿namespace BusinessParties.Domain.Model.Parties
 {
     public class LegalParty : Party
     {

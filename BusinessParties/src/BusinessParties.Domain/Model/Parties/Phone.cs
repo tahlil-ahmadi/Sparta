@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Sparta.Domain;
+﻿using Sparta.Domain;
 
-namespace BusinessParties.Domain.Model
+namespace BusinessParties.Domain.Model.Parties
 {
     public class Phone : ValueObject
     {

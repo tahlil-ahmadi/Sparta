@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using BusinessParties.Domain.Model;
+using BusinessParties.Domain.Model.Parties;
 using NHibernate.Mapping;
 using NHibernate.Mapping.ByCode;
 using NHibernate.Mapping.ByCode.Conformist;
@@ -18,6 +19,7 @@ namespace BusinessParties.Persistence.NH.Mappings
             {
                 a.Property(z=>z.Id);
             });
+            Property(a=>a.State, a=>a.Type<PartyStateMapping>());
             IdBag(a=>a.Phones, mapper =>
             {
                 mapper.Table("Phones");
