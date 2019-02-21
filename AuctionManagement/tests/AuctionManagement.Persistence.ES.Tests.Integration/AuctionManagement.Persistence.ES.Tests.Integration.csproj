@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\AuctionManagement.Persistence.ES\AuctionManagement.Persistence.ES.csproj" />
+    <ProjectReference Include="..\AuctionManagement.Domain.TestsUtil\AuctionManagement.Domain.TestsUtil.csproj" />
   </ItemGroup>
 
 </Project>

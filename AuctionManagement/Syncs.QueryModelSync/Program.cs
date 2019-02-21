@@ -18,6 +18,8 @@ namespace Syncs.QueryModelSync
             var connection = EventStoreConnection.Create(new IPEndPoint(IPAddress.Loopback, 1113));
             connection.ConnectAsync().Wait();
             var credentials = new UserCredentials("admin", "changeit");
+            
+            //TODO: should use catch-up subscription instead of subscribe to all
             connection.SubscribeToAllAsync(false, EventAppeared, SubscriptionDropped, credentials).Wait();
 
             Console.WriteLine("Subscription started !");
