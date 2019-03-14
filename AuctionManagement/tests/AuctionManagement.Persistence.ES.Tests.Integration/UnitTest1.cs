@@ -16,12 +16,11 @@ namespace AuctionManagement.Persistence.ES.Tests.Integration
 
             var rep = new AuctionRepository();
             var auction = new Auction(new Participant(10, "Jack"), new SellingProduct(1, "Black Shoes"), 10000, DateTime.Now.AddDays(7), clock);
+            auction.PlaceBid(new Bid(2, 11000, DateTime.Now), clock);
+            auction.PlaceBid(new Bid(2, 12000, DateTime.Now), clock);
             rep.Add(auction);
 
 
-            //var rep = new AuctionRepository();
-            //var id = Guid.Parse("7ca38e9b-c5aa-4171-8378-99c5fb87b47e");
-            //var auction = rep.Get(id);
         }
     }
 
